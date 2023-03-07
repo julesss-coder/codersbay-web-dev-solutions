@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Kontakt</title>  
+</head>
+<body>
+  <div class="flex-wrapper">
+    <header>
+      <nav id="header-nav">
+        <span><a href="./index.html">Home</a></span>
+        <span><a href="./tierpatenschaften.html">Tierpatenschaften</a></span>
+        <span><a href="./kontakt.html">Kontakt</a></span>
+      </nav>
+    </header>
+    <main>
+
+      <div class="container">
+        <h1>Kontakt</h1>
+
+        <form class="contact-form" action="">
+          <label for="full-name">Name: </label>
+          <input 
+          id="full-name"
+          type="text" 
+          placeholder="Name" 
+          name="name"
+          required
+          >
+          
+          
+          <label for="email">Email: </label>
+          <input 
+          id="email" 
+          type="email" 
+          placeholder="Email"
+          name="email"
+          required
+          >
+          
+          <!-- Wie kriege ich das jeweils aktuelle Datum hin? -->
+          <label for="date">Datum: </label>
+          <input 
+            id="date" 
+            type="date" 
+            name="date"
+            max="2023-03-07"
+            placeholder="jjjj-mm-tt"
+            required
+          > 
+          
+          <label for="time">Zeit: </label>
+          <input 
+          id="time" 
+          type="time" 
+          name="date"
+          min="9:00" 
+          max="17:00"
+          >
+          
+          <div class="row">
+            <label for="rating">Bewertung: 
+            </label>
+            <input 
+            id="rating" 
+            type="range" 
+            name="rating"
+            min="0" 
+            max="10"
+            required
+            >
+          </div>
+          
+          <label for="recommends">
+            <input 
+            id="recommends"
+            type="checkbox" 
+            name="recommends"
+            >
+            Ich würde den Zoo Linz weiterempfehlen.</label>
+          
+          <label for="fav-animal">Welche Tierart hat Ihnen in unserem Zoo am besten gefallen?</label>
+          <input 
+          id="fav-animal"
+          list="animals-list" 
+          >
+          
+          <datalist id="animals-list">
+            <option value="Kuh">
+              <option value="Elefant">
+                <option value="Tiger">
+                </datalist>
+                
+          <label for="comment">Ihr Kommentar: </label>
+          <textarea 
+          id="comment" 
+          name="comment" 
+          placeholder="Ihr Kommentar"
+          cols="30" 
+          rows="10"
+          ></textarea>
+          
+          <label for="visitor-info">Besucherinfo:</label>
+          <select id="visitor-info" name="visitor-info">
+            <option value="1">Familienausflug</option>
+            <option value="2">Allein unterwegs</option>
+            <option value="3">Gruppenausflug</option>
+            <option value="4">Ausflug mit Freunden</option>
+            <option value="5">Etwas anderes</option>
+          </select>
+          
+          <div class="btn-wrapper">
+            <input type="reset" value="Zurücksetzen">
+            <input type="submit" value="Abschicken">
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <section id="footer-text">
+        <a href="#">Nach oben</a>
+      </section>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Header  */
+
+#header-nav {
+  background-color: black;
+  padding: 20px;
+}
+
+#header-nav span {
+  padding-right: 20px;
+}
+
+#header-nav span a {
+  text-decoration: none;
+  color: white;  
+}
+
+
+/* Main */
+main {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  display: flex;
+  gap: 50px 20px;
+  flex-wrap: nowrap;
+}
+
+/* index.html */
+
+.video {
+  display: flex;
+  row-gap: 20px;
+  column-gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+iframe {
+  flex-basis: 33,33333%;
+}
+
+/* Animal list */
+.animal-list {
+  background-color: lightblue;
+  padding: 10px 20px;
+  border: 1px double black;
+  border-radius: 20px;
+  margin-top: 50px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* tierpatenschaften.html */
+/* FRAGE: Wie kann ich div.animal-adoption oben anbringen und den Footer unten, ohne die Höhe des divs zu ändern? */
+.animal-adoption {
+  min-height: 80vh;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+th, 
+td {
+  background-color: #96D4D4;
+}
+
+/* contact.html */
+.container {
+  width: 70%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+label {
+  padding: 8px;
+}
+
+input,
+select {
+  padding: 15px;
+}
+
+.row {
+  padding: 8px;
+  display: flex;
+
+}
+
+.row > label {
+  padding: 8px 10px 8px 0;
+}
+
+input[type="range"] {
+  padding: 0;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  gap: 10px;
+}
+
+input[type="reset"],
+input[type="submit"] {
+  padding: 15px;
+  background-color: white;
+  border: 1px solid rgb(14, 98, 193);
+  border-radius: 5px;
+  color: rgb(14, 98, 193);
+}
+
+/* Footer */
+/* Wie befestige ich den Footer unten (nicht fixieren), auch wenn die Seite wenig Inhalt hat? */
+footer {
+  background-color: black;
+  padding: 10px 0;
+}
+
+#footer-text a {
+  color: white;  
+  text-decoration: none;
+}
