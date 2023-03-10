@@ -1,3 +1,5 @@
+/* General styles */
+
 @font-face {
   font-family: Quicksand;
   src: url(./Quicksand-Medium.ttf);
@@ -7,7 +9,6 @@
   font-family: 'Berkshire-Swash-Regular';
   src: url(./BerkshireSwash-Regular.ttf);
 }
-
 
 body {
   margin: 0;
@@ -21,39 +22,22 @@ body {
   justify-content: space-between;
 }
 
-
-/* Links */
-
-.partners a:link {
-  padding: 10px 8px;
-  border: 1px solid blueviolet;
-  border-radius: 10px;
-  text-decoration: none;
-  display: inline-block;
-  /* line-height: normal; */
-  vertical-align: middle; /*wieso funktioniert das nicht?*/
+p {
+  line-height: 1.5rem;
 }
 
-/* FIXME Links aendern sich nicht nach Klick */
-.partners a:visited {
-  color: blueviolet;
-  background-color: yellowgreen;
-}
-.partners a:hover {
-  border: 1px solid rgb(180, 137, 219);
-  background-color: rgb(131, 155, 175);  
-}
-
-.partners a:active {
-  padding: 5px 8px;
-  border: 1px solid blueviolet;
-  background-color: steelblue;
-  color: black;
+main {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
+  background-color: white;
+  margin-bottom: 40px;
 }
 
 
-
-/* Header  */
+/* === Header === */
 
 #header-nav {
   background-color: black;
@@ -70,19 +54,34 @@ body {
 }
 
 
-/* Main */
-main {
-  margin: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* === HOMEPAGE === */
+
+/* === Animation on home page === */
+
+.pets {
+  /*rotate 360 degrees and turn orange*/
+  animation-name: rotateAndChangeColour;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
 }
 
-.section {
-  display: flex;
-  gap: 50px 20px;
-  flex-wrap: nowrap;
+@keyframes rotateAndChangeColour {
+  0% {
+    color: black;
+  }
+  50% {
+    color: orange;
+    transform: rotate(360deg);
+    /* font-size: 2em; */
+  }
+  100% {
+    color: black;
+    color: blueviolet;
+  }
 }
+
+/* === Main section of home page === */
 
 .section > p::first-letter {
   color: red;
@@ -93,43 +92,19 @@ main {
 .img-left,
 .img-right {
   border-radius: 10px;
+  padding: 20px;
+  border: 1px solid gray;
 }
 
-figure {
-  text-align: center;
+.float-left {
+  float: left;
+  margin: 0 20px 20px 0;
 }
 
-figcaption {
-  display: inline-block;
-  text-align: left;
-  font-size: smaller;
+.float-right {
+  float: right;
+  margin: 0 0 20px 20px;
 }
-
-.pets {
-  /*rotate 360 degrees and turn orange*/
-  animation-name: rotateAndChangeColour;
-  animation-duration: 5s;
-  animation-timing-function: ease-out;
-}
-
-@keyframes rotateAndChangeColour {
-  from {
-    color: black;
-  }
-  to {
-    color: orange;
-    transform: rotate(360deg);
-    /* font-size: 2em; */
-  }
-}
-
-/* index.html */
-
-/* .img-left,
-.img-right {
-  width: 100%;
-  height: auto;
-} */
 
 .video {
   display: flex;
@@ -143,7 +118,8 @@ iframe {
   flex-basis: 33,33333%;
 }
 
-/* Animal list */
+/* === Animal list === */
+
 .animal-list {
   background-color: lightblue;
   padding: 10px 20px;
@@ -158,8 +134,47 @@ iframe {
   font-size: 1.5em;
 }
 
-/* tierpatenschaften.html */
-/* FRAGE: Wie kann ich div.animal-adoption oben anbringen und den Footer unten, ohne die Höhe des divs zu ändern? */
+/* === Partner zoos === */
+
+@media (width < 650px) {
+  .partners span {
+    display: block;
+    margin: 20px 0;
+  }
+}
+
+.partners a:link {
+  padding: 10px 8px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle; /*wieso funktioniert das nicht?*/
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* FIXME Links aendern sich nicht nach Klick */
+.partners a:visited {
+  color: blueviolet;
+  background-color: yellowgreen;
+}
+
+.partners a:hover {
+  border: 1px solid blueviolet;
+  background-color: rgba(219, 129, 12, 0.2);  
+}
+
+.partners a:active {
+  padding: 5px 8px;
+  border: 3px solid blueviolet;
+  background-color:rgba(219, 129, 12, 0.2);  
+  color: black;
+  box-shadow: none;
+}
+
+
+/* === PAGE "TIERPATENSCHAFTEN" === */
+
 .animal-adoption {
   min-height: 80vh;
 }
@@ -182,8 +197,7 @@ td {
 }
 
 
-
-/* contact.html */
+/* PAGE "KONTAKT" */
 .container {
   width: 70%;
   max-width: 100%;
@@ -208,7 +222,6 @@ select {
 .row {
   padding: 8px;
   display: flex;
-
 }
 
 .row > label {
@@ -233,7 +246,6 @@ input[type="submit"] {
   border: 2px solid rgb(14, 98, 193);
   border-radius: 5px;
   color: rgb(14, 98, 193);
-  /* font-weight: 700; */
 }
 
 input[type="reset"]:active,
@@ -241,11 +253,15 @@ input[type="submit"]:active {
   border: 3px solid gray;
 }
 
-/* Footer */
-/* Wie befestige ich den Footer unten (nicht fixieren), auch wenn die Seite wenig Inhalt hat? */
+
+/* === Footer === */
 footer {
   background-color: black;
   padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-left: 20px;
 }
 
 #footer-text a {
@@ -253,10 +269,3 @@ footer {
   text-decoration: none;
 }
 
-/* Media queries */
-@media (max-width: 900px) {
-  h1 {
-    font-size: calc(1em - 2px);
-    color: green;
-  }
-}
