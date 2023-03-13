@@ -2,21 +2,36 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Georama:wght@300;400;600&display=swap');
 
+:root {
+  --dark-blue: #023047;
+  --light-blue: #8ECAE6;
+  --medium-blue: #8ECAE6;
+  --yellow: #FFB703;
+  --orange: #FB8500;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   font-family: 'Georama', sans-serif;
+  /* Wodurch entsteht der Overflow? */
+  overflow-x: hidden;
 }
 
 main {
-  margin: 0 10px;
+  margin: 20px 20px 40px;
 }
 
 
 /* === Navigation === */
 
 nav {
-  background-color: #577590;
+  background-color: var(--dark-blue);
   color: white;
+  /* font-weight: bold; */
+  font-size: 1.1em;
 }
 
 .nav-link a {
@@ -27,13 +42,13 @@ nav {
 }
 
 .nav-link a:hover {
-  background-color: #f2a541;
-  color: black;
+  background-color: var(--yellow);
+  color: var(--dark-blue);
 }
 
 .nav-link a:active {
-  background-color: #f3ca40;
-  color: black;
+  background-color: var(--orange);
+  color: var(--dark-blue);
 }
 
 
@@ -42,6 +57,22 @@ nav {
 
 .destination-wrapper {
   display: flex;
+  margin: 20px 0;
+}
+
+.description-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.destination-headline-link a {
+  text-decoration: none;
+  color: var(--dark-blue);
 }
 
 .image-wrapper {
@@ -52,22 +83,57 @@ nav {
 }
 
 .destination-img {
-  background-image: url(./images/alberto-gasco-GKkePsCUDsw-unsplash.jpg);
   background-position: center;
   background-size: 100% 100%;
+}
+
+.destination-img-asturias {
+  background-image: url(./images/alberto-gasco-GKkePsCUDsw-unsplash.jpg);
   width: 300px;
   height: 400px;
+}
+
+.destination-img-menorca {
+  background-image: url(./images/juliana-chyzhova-wT4pxS2ettg-unsplash.jpg);
+  width: 400px;
+  height: 300px;
+}
+
+figcaption small {
+  display: block;
+  text-align: center;
+}
+
+/* Image cannot be displayed properly if I don't add background-position and background-size to this class */
+.destination-img-madeira {
+  background: url(./images/jan-tokarczyk-ddmxivBrpAQ-unsplash.jpg);
+  background-position: center;
+  background-size: 100% 100%;
+  width: 400px;
+  height: 300px;
+}
+
+.destination-img-alentejo-litoral {
+  background-image: url(./images/antonio-mendes-ahywiJNptok-unsplash.jpg);
+  width: 400px;
+  height: 300px;
 }
 
 
 
 /* === Footer === */
 footer {
-  background-color: #577590;
-  color: white;
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
   padding: 10px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
+  height: auto;
+  margin-top: auto;
 }
+
+
+/* === ASTURIAS, SPANIEN === */
+
+/* Display aside next to text */
+/* Create gallery with grid display */
 
