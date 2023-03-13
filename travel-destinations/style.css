@@ -1,0 +1,73 @@
+/* === General styles === */
+
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Georama', sans-serif;
+}
+
+main {
+  margin: 0 10px;
+}
+
+
+/* === Navigation === */
+
+nav {
+  background-color: #577590;
+  color: white;
+}
+
+.nav-link a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.nav-link a:hover {
+  background-color: #f2a541;
+  color: black;
+}
+
+.nav-link a:active {
+  background-color: #f3ca40;
+  color: black;
+}
+
+
+/* === Home === */
+  /* === Main === */
+
+.destination-wrapper {
+  display: flex;
+}
+
+.image-wrapper {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.destination-img {
+  background-image: url(./images/alberto-gasco-GKkePsCUDsw-unsplash.jpg);
+  background-position: center;
+  background-size: 100% 100%;
+  width: 300px;
+  height: 400px;
+}
+
+
+
+/* === Footer === */
+footer {
+  background-color: #577590;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
