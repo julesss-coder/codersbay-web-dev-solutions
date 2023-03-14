@@ -58,7 +58,9 @@ nav {
 
 .destination-wrapper {
   display: flex;
-  margin: 20px 0;
+  margin: 30px 0;
+  column-gap: 30px;
+  row-gap: 20px;
 }
 
 .description-wrapper {
@@ -77,27 +79,32 @@ nav {
 }
 
 .image-wrapper {
-  padding: 10px;
+  padding: 10px 10px 40px 10px;
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  width: 320px;
+  height: 280px;
+}
+
+.image-wrapper figcaption {
+  padding: 5px;
 }
 
 .destination-img {
   background-position: center;
   background-size: 100% 100%;
+  width: inherit;
+  height: inherit;
 }
 
 .destination-img-asturias {
   background-image: url(./images/alberto-gasco-GKkePsCUDsw-unsplash.jpg);
-  width: 300px;
-  height: 400px;
 }
 
 .destination-img-menorca {
   background-image: url(./images/juliana-chyzhova-wT4pxS2ettg-unsplash.jpg);
-  width: 400px;
-  height: 300px;
 }
 
 figcaption small {
@@ -108,18 +115,14 @@ figcaption small {
 /* Image cannot be displayed properly if I don't add background-position and background-size to this class */
 .destination-img-madeira {
   background: url(./images/jan-tokarczyk-ddmxivBrpAQ-unsplash.jpg);
-  background-position: center;
-  background-size: 100% 100%;
-  width: 400px;
-  height: 300px;
+  background-position:  25% 75%;;
 }
 
 .destination-img-alentejo-litoral {
   background-image: url(./images/antonio-mendes-ahywiJNptok-unsplash.jpg);
-  width: 400px;
-  height: 300px;
-}
-
+  /* width: 400px;
+  height: 300px; */
+} 
 
 
 /* === Footer === */
@@ -131,20 +134,10 @@ footer {
   margin-top: auto;
 }
 
-
 /* === ASTURIAS, SPANIEN === */
 
 /* Display aside next to text */
 /* Create gallery with grid display */
-
-/* .gallery-grid img {
-  max-width: 300px;
-  height: auto;
-} */
-
-/* Ich habe die img tags aus den divs herausgenommen, damit die imgs direkte Kinder des grid-Containers sind.  */
-
-
 .gallery-grid {
   display: grid;
   /* Alle Bilder sind 640px breit. */
@@ -156,16 +149,16 @@ footer {
 }
 
 
-/* .horizontal {
+.horizontal {
   grid-column: span 2;
-} */
+} 
 
 /* Wenn ein Bild nicht genau 640px x 480 px gross ist - kann ich es dann an diese Groesse anpassen, ohne das Seitenverhaeltnis zu verlieren? Aspect-ratio? */
-.regular {
-  /* margin: 0 auto; */
-  /* width: 640px;
-  height: 480px; */
-}
+/* .regular { 
+  margin: 0 auto;
+  width: 640px;
+  height: 480px;
+} */
 
 .regular img {
   width: 100%;
@@ -187,3 +180,27 @@ footer {
   object-fit: cover;
 }
 
+
+/* === Media queries === */
+
+  /* === Print display === */
+@media print {
+  nav {
+    display: none;
+  }
+
+  .image-wrapper {
+    display: none;
+  }
+
+  a[href]:after {
+		content: ' (URL: ' attr(href) ')';
+	}
+}
+
+  /* === Breakpoints === */
+@media (max-width: 800px) {
+  .destination-wrapper {
+    flex-direction: column;
+  }
+}
