@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>Kontakt</title>
+</head>
+<body>
+  <header>
+    <!-- Navigation -->
+    <nav>
+      <span class="nav-link">
+        <a href="./index.html">Home</a>
+      </span>
+      <span class="nav-link">
+        <a href="./spanien_asturias.html">Asturias | Spanien</a>
+      </span>
+      <span class="nav-link">
+        <a href="./spanien_menorca.html">Menorca | Spanien</a>
+      </span>
+      <span class="nav-link">
+        <a href="./portugal_madeira.html">Madeira | Portugal</a>
+      </span>
+      <span class="nav-link">
+        <a href="./portugal_alentejo-litoral.html">Alentejo Litoral | Portugal</a>
+      </span>
+      <span class="nav-link">
+        <a href="./kontakt.html">Kontakt</a>
+      </span>
+      <span id="menu-icon" class="nav-link menu-icon">
+        <span class="material-symbols-outlined">
+          menu
+          </span>
+      </span>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Reiseauskunft</h1>
+    <form class="flex-container-contact" action="">
+      <div class="form-item">
+        <label for="first-name">Vorname: </label>
+        <input type="text" id="first-name">
+      </div>
+
+      <div class="form-item">
+        <label for="last-name">Nachname: </label>
+        <input type="text" id="last-name">
+      </div>
+
+      <div class="form-item">
+        <label for="email">E-Mail-Adresse: </label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-item">
+        <label for="destination">Wählen Sie Ihre Reisedestination: </label>
+        <select name="destination" id="destination">
+          <option value="spanien-asturias">Asturias, Spanien</option>
+          <option value="spanien-menorca">Menorca, Spanien</option>
+          <option value="portugal-madeira">Madeira, Portugal</option>
+          <option value="portugal-alentejo-litorial">Alentejo Litorial, Portugal</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="start-date">Abreise: </label>
+        <input type="date" id="start-date">
+      </div>
+
+      <div class="form-item">
+        <label for="end-date">Rückreise: </label>
+        <input type="date" id="end-date">
+      </div>
+
+      <div id="submit-btn" class="form-item">
+        <input type="submit" value="Absenden">
+      </div>
+    </form>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
