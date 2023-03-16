@@ -25,7 +25,8 @@ mindestens 3 Bilder / Galerie
 ## TODOS
 - [ ] Make images responsive
 - [ ] Use CSS to force breaks in address in footer
-- [ ] Madeira-Foto auf Homepage ist nicht in richtiger Position
+- [ ] Download google icon instead of linking to it.
+- [ ] Fix expanded mobile menu: hover color should be 100% width
 
 ##
 Top-Destinationen auf der Iberischen Halbinsel und auf den zugehoerigen Inseln
@@ -45,8 +46,8 @@ Portugal:
 - [x] Erstelle (falls noch nicht vorhanden) ein Kontaktformular für deine Reisedestination Seite bei der du mittels Dropdown eine Destination auch auswählen kannst plus ein paar anderer Formularfelder. 
   - [x] In der mobilen Ansicht sollen die Labels für die Inputfelder darüber stehen, auf großen Screens daneben.
 - [x] Baue eine Klappnavigation (Burgermenue) z.B.: anhand der Vorlage: https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
-- [ ] Binde für die unterschiedlichen Displaygrößen unterschiedliche Fotos ein
-- [ ] Baue eine Keyframe Animation ein
+- [x] Binde für die unterschiedlichen Displaygrößen unterschiedliche Fotos ein
+- [x] Baue eine Keyframe Animation ein
 - [x] nutze Custom Properties um die Farben oder sich wiederholende Maßeinheiten als Variable abzuspeichern
 - [x] baue irgendwo einen Filtereffekt ein
 - [x] Nutze das Gridsystem (z.B.: generelle Layoutstruktur/ Seitenaufbau) und Flexboxen(z.B.: Navigationselemente)für das Layout
