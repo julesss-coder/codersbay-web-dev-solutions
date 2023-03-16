@@ -36,6 +36,14 @@ nav {
   min-height: 2.5em;
 }
 
+/* .nav-link span {
+  height: 100%;
+}
+
+.nav-link a {
+  height: 100%;
+} */
+
 .nav-link a {
   display: inline-block;
   text-decoration: none;
@@ -45,6 +53,7 @@ nav {
   line-height: 2.5em;
 }
 
+/* .nav-link a:hover { */
 .nav-link a:hover {
   background-color: var(--yellow);
   color: var(--dark-blue);
@@ -131,7 +140,7 @@ figcaption small {
 /* Image cannot be displayed properly if I don't add background-position and background-size to this class */
 .destination-img-madeira {
   background: url(./images/jan-tokarczyk-ddmxivBrpAQ-unsplash.jpg);
-  background-position:  25% 75%;;
+  background-size: cover;
 }
 
 .destination-img-alentejo-litoral {
@@ -150,129 +159,6 @@ footer {
   margin-top: auto;
 }
 
-/* === ASTURIAS, SPANIEN === */
-
-/* Display aside next to text */
-/* Create gallery with grid display */
-.gallery-grid {
-  display: grid;
-  /* Alle Bilder sind 640px breit. */
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  /* Die Bilder sind unterschiedlich hoch. Normale Bilder zw 480 und 540 px, horizontale 800px. */
-  grid-auto-rows: 480px;
-  grid-auto-flow: dense; 
-  /* grid-row-gap: 40px; */
-}
-
-
-.horizontal {
-  grid-column: span 2;
-} 
-
-/* Wenn ein Bild nicht genau 640px x 480 px gross ist - kann ich es dann an diese Groesse anpassen, ohne das Seitenverhaeltnis zu verlieren? Aspect-ratio? */
-/* .regular { 
-  margin: 0 auto;
-  width: 640px;
-  height: 480px;
-} */
-
-.filtered {
-  filter: hue-rotate(50deg);
-}
-
-.regular img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* How can I resize images without stretching them? => object-fit property*/
-.vertical {
-  grid-row: span 2;
-  /* width: 640px;
-  height: 960px; */
-  background-color: var(--yellow);
-}
-
-.vertical img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-/* === KONTAKT ===  */
-
-.flex-container-contact {
-  display: flex;
-  flex-direction: column;
-  margin: 50px auto;
-  max-width: 40%;
-  gap: 5px;
-  padding: 2em;
-  border: 1px solid var(--light-blue);
-  border-radius: 10px;
-}
-
-
-
-.form-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px 8px;
-  color: var(--dark-blue);
-}
-
-.form-item label {
-  flex-basis: 50%;
-}
-
-.form-item > *:nth-child(even) {
-  flex-basis: 60%;
-  box-sizing: border-box;
-}
-
-.form-item:last-child {
-
-  /* align-self: flex-end; */
-  flex-direction: row-reverse;
-}
-
-#submit-btn.reverse {
-  flex-direction: row;
-}
-
-.form-item > * {
-  padding: 2px 4px;
-  font-family: 'Georama', sans-serif;
-  color: var(--dark-blue);
-}
-
-input[type="submit"] {
-  border: 1px solid var(--light-blue);
-  background-color: var(--dark-blue);
-  color: white;
-  padding: 8px 10px;
-  border-radius: 5px;
-}
-
-input[type="submit"]:active {
-  border: 3px solid var(--light-blue);
-  background-color: var(--orange);
-  color: black;
-}
-
-@media (max-width: 800px) {
-  .flex-container-contact {
-    max-width: 80%;
-  }
-
-  .form-item {
-    flex-direction: column;
-    margin: 0.5em 0;
-  }
-}
 
 
 /* === Media queries === */
