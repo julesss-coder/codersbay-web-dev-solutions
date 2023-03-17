@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+.players {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-around;
+  padding: 2rem;
+  font-size: 1.5rem;
+
+}
+
+.user-choice-img,
+.computer-choice-img {
+  width: 300px;
+  height: 300px;
+}
+
+.announcements {
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.new-game-btn {
+  border: 1px solid black;
+  padding: 10px 14px;
+  border-radius: 5px;
+  background-color: yellow;
+  font-size: 1.5rem;
+}
+
+.new-game-btn:active {
+  border: 3px solid orange;
+}
+
+.announcements {
+  text-align: center;
+}
+
+.user-interaction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.rounds-display {
+  font-size: 1.5rem;
+}
