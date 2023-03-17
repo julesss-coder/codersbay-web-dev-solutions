@@ -1,0 +1,72 @@
+/* === KONTAKT ===  */
+
+.flex-container-contact {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  max-width: 40%;
+  gap: 5px;
+  padding: 2em;
+  border: 1px solid var(--light-blue);
+  border-radius: 10px;
+}
+
+
+
+.form-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 8px;
+  color: var(--dark-blue);
+}
+
+.form-item label {
+  flex-basis: 50%;
+}
+
+.form-item > *:nth-child(even) {
+  flex-basis: 60%;
+  box-sizing: border-box;
+}
+
+.form-item:last-child {
+
+  /* align-self: flex-end; */
+  flex-direction: row-reverse;
+}
+
+#submit-btn.reverse {
+  flex-direction: row;
+}
+
+.form-item > * {
+  padding: 2px 4px;
+  font-family: 'Georama', sans-serif;
+  color: var(--dark-blue);
+}
+
+input[type="submit"] {
+  border: 1px solid var(--light-blue);
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+input[type="submit"]:active {
+  border: 3px solid var(--light-blue);
+  background-color: var(--orange);
+  color: black;
+}
+
+@media (max-width: 800px) {
+  .flex-container-contact {
+    max-width: 80%;
+  }
+
+  .form-item {
+    flex-direction: column;
+    margin: 0.5em 0;
+  }
+}
