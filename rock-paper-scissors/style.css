@@ -1,60 +1,107 @@
+/* Color variables */
+:root {
+  --quinacridone-magenta: #92374d;
+  --plum: #8c5383;
+  --yinminblue: #4a5899;
+  --moonstone: #559cad;
+  --silver: #c1b2ab;
+}
+
+/* General styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: monospace;
+  background-color: var(--silver);
 }
 
+/* User interaction */
+.user-interaction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+
+.rounds-display {
+  font-size: 1.5rem;
+}
+
+.choice-btns {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 14px;
+}
+
+.rock-btn,
+.paper-btn,
+.scissors-btn {
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 1.5rem;  
+  background-color: var(--moonstone);
+  color: white;
+  border: 2px solid var(--moonstone);
+}
+
+.rock-btn:active,
+.paper-btn:active,
+.scissors-btn:active {
+  border: 2px solid var(--plum);
+}
+
+.new-game-btn {
+  border: 3px solid var(--yinminblue);
+  padding: 10px 14px;
+  border-radius: 5px;
+  background-color: yellow;
+  font-size: 1.5rem;
+  background-color: var(--yinminblue);
+  color: white;
+}
+
+.new-game-btn:active {
+  border: 3px solid var(--quinacridone-magenta);
+}
+
+
+/* Players display */
 .players {
   display: flex;
-  border: 1px solid black;
   justify-content: space-around;
   padding: 2rem;
   font-size: 1.5rem;
+}
 
+.user-choice-text,
+.computer-choice-text {
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 .user-choice-img,
 .computer-choice-img {
   width: 300px;
   height: 300px;
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 3rem;
+  line-height: 300px;
 }
 
+/* Announcements */
 .announcements {
   padding: 2rem;
   font-size: 2rem;
+  text-align: center;
+  height: 15vh;
 }
 
 .scores {
   display: flex;
   justify-content: space-around;
   padding: 2rem;
-}
-
-.new-game-btn {
-  border: 1px solid black;
-  padding: 10px 14px;
-  border-radius: 5px;
-  background-color: yellow;
-  font-size: 1.5rem;
-}
-
-.new-game-btn:active {
-  border: 3px solid orange;
-}
-
-.announcements {
-  text-align: center;
-}
-
-.user-interaction {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid black;
-  padding: 2rem;
-}
-
-.rounds-display {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
