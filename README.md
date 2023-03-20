@@ -13,5 +13,4 @@ Website: https://effervescent-pavlova-6788a0.netlify.app/
 ## Rock, paper, scissors
 Task description (in German): https://wiki.streampy.at/index.php?title=Web_-_Kompetenzcheck_JavaScript_1#Schere.2C_Stein.2C_Papier_.E2.9C.82.EF.B8.8F_.F0.9F.97.BF_.F0.9F.A7.BB
 
-Website (to be updated once finished): https://funny-entremet-63472d.netlify.app/
-
+Website: https://zingy-puffpuff-5995de.netlify.app/
