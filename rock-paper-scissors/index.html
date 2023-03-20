@@ -5,47 +5,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <script>
+  </script>
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
   <main>
-    <section class="players">
-      <div class="computer-choice">
-        <div class="computer-choice-text">
-          Computer's choice:
-        </div>
-        <div class="computer-choice-img"></div>
-      </div>
-      <div class="user-choice">
-        <div class="user-choice-text">
-          User's choice:
-        </div>
-        <div class="user-choice-img"></div>
-      </div>
-    </section>
-    <section class="announcements">
-      XY wins this round!
-    </section>
-    <section class="scores">
-      <div>
-        Computer score:
-        <span class="computer-score"></span>
-      </div>
-      <div>
-        User score:
-        <span class="user-score"></span>
-      </div>  
-    </section>
     <section class="user-interaction">
       <div class="new-game-btn">
         New Game
       </div>
       <div class="rounds-display">
-        <span class="current-round"></span>
-        of
-        <span class="number-of-rounds"></span> 
+        <span class="current-round">0</span>
+         / 
+        <span class="number-of-rounds">0</span>
         rounds left
       </div>
+    </section>
+    <section class="players">
+      <div class="computer-choice">
+        <div class="computer-choice-text">
+          Computer's choice:
+        </div>
+        <div class="computer-choice-img">?</div>
+      </div>
+      <div class="user-choice">
+        <div class="user-choice-text">
+          User's choice:
+        </div>
+        <div class="user-choice-img">?</div>
+      </div>
+    </section>
+    <section class="announcements"> </section>
+    <section class="scores">
+      <div>
+        Computer score:
+        <span class="computer-score">0</span>
+      </div>
+      <div>
+        User score:
+        <span class="user-score">0</span>
+      </div>  
+    </section>
+    <section class="choice-btns">
+      <div class="rock-btn">rock</div>
+      <div class="paper-btn">paper</div>
+      <div class="scissors-btn">scissors</div>
     </section>
   </main>
 
