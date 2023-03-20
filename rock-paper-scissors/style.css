@@ -16,6 +16,13 @@
   background-color: var(--silver);
 }
 
+/* Headline */
+.headline {
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
 /* User interaction */
 .user-interaction {
   display: flex;
