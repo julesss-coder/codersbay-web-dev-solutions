@@ -1,3 +1,4 @@
+// DOM elements
 let numberOfRounds = document.querySelector(".number-of-rounds");
 let currentRound = document.querySelector(".current-round");
 let computerChoiceText = document.querySelector(".computer-choice-text");
@@ -6,48 +7,55 @@ let userChoiceText = document.querySelector(".user-choice-text");
 let userChoiceImg = document.querySelector(".user-choice-img");
 let newGameBtn = document.querySelector(".new-game-btn");
 let announcements = document.querySelector(".announcements");
+let rockBtn = document.querySelector(".rock-btn");
+let choiceBtns = document.querySelector(".choice-btns");
+let paperBtn = document.querySelector(".paper-btn");
+let scissorsBtn = document.querySelector(".scissors-btn");
 let userScore = document.querySelector(".user-score");
 let computerScore = document.querySelector(".computer-score");
+let newGame;
+
 
 // Event listeners
+choiceBtns.addEventListener("click", (event) => {
+  if (newGame.rounds > 0) {
+    if (event.target.className === "rock-btn" ||
+      event.target.className === "paper-btn" ||
+      event.target.className === "scissors-btn") {
+  
+      newGame.userChoice = event.target.textContent;
+      newGame.playRound();
+      console.log(event.target.textContent);
+    }
+  }
+});
+
 newGameBtn.addEventListener("click", () => {
-  let newGame = new RockPaperScissors();
+  newGame = new RockPaperScissors();
   newGame.startGame();  
 });
 
 
+// The game
 class RockPaperScissors {
   constructor() {
     this.userScore = 0;
     this.computerScore = 0;
     this.rounds = 0;
     this.choices = ["rock", "paper", "scissors"];
-    this.computerChoice;
-    this.userChoice;
+    this.computerChoice = "";
+    this.userChoice = "";
     this.roundWinner = "";
   }
 
-  // Do I need getters and setters?
-
-  // Methods
   getNumberOfRounds() {
     this.rounds = +prompt("How many rounds would you like to play? Enter an integer.", 1);
+    currentRound.textContent = this.rounds;
     numberOfRounds.textContent = this.rounds; // should not change during game bc method is only called in beginning of game
   }
 
   getComputerChoice() {
     this.computerChoice = this.choices[this.generateRandomNumber()];
-    console.log("this.computerChoice: ", this.computerChoice);
-  }
-
-  getUserChoice() {
-    // Can't I put `number` in the constructor, or not create a variable altogether?
-    let number;
-    while (number < 0 || number > 2 || typeof number !== "number") {
-      number = +prompt("Enter: 0 for rock, 1 for paper, 2 for scissors", 1);
-    }
-
-    this.userChoice = this.choices[number];
   }
 
   generateRandomNumber() {
@@ -57,11 +65,9 @@ class RockPaperScissors {
   displayChoices() {
     computerChoiceText.textContent = "Computer's choice: " + this.computerChoice;
     userChoiceText.textContent = "User's choice: " + this.userChoice;
-    // computerChoiceImg.style.backgroundImage = "url(`images/${this.computerChoice}.jpg`)";
     computerChoiceImg.style.backgroundImage = `url(images/${this.computerChoice}.jpg)`;
     userChoiceImg.style.backgroundImage = `url(images/${this.userChoice}.jpg)`;
   }
-
 
   displayRounds() {
     currentRound.textContent = this.rounds;
@@ -98,16 +104,6 @@ class RockPaperScissors {
       }
       this.displayScore();
       this.announceRoundWinner();
-      /*
-      assign winner to this.roundWinner:
-        + value is saved -> can be passed to separate method
-        + separation of concerns
-
-      console.log roundwinner directly:
-        - makes code hard to read
-        - does not separate concerns (announcing winner, getting winner)
-
-      */
     }
   }
 
@@ -126,27 +122,45 @@ class RockPaperScissors {
 
   announceFinalWinner() {
     if (this.userScore === this.computerScore) {
-      console.log(`User score: ${this.userScore}, computer score: ${this.computerScore}. It's a tie.`);
+      announcements.innerText = 
+      `User score: ${this.userScore}, computer score: ${this.computerScore}.
+      It's a tie.`;
       return;
     }
 
-    this.userScore > this.computerScore ? console.log("User wins") : console.log("Computer wins");
+    this.userScore > this.computerScore 
+      ? 
+      announcements.innerText = 
+      `User score: ${this.userScore}, computer score: ${this.computerScore}.
+      User wins.`
+      :
+      announcements.innerText = 
+      `User score: ${this.userScore}, computer score: ${this.computerScore}
+      Computer wins.`;
+  }
+  
+  playRound() {
+    if (this.rounds > 0) {
+      this.getComputerChoice();
+      this.displayChoices();
+      this.displayRounds();
+      this.getRoundWinner();
+      this.rounds--;
+      this.displayRounds();
+      this.userChoice == "";
+      this.computerChoice = "";
+      this.roundWinner = "";
+    } else {
+      return;
+    }
 
+    // Once we have finished the last round:
+    if (this.rounds === 0) {
+      this.announceFinalWinner();
+    }
   }
 
   startGame() {
     this.getNumberOfRounds();
-    while (this.rounds > 0) {
-      this.getComputerChoice();
-      this.getUserChoice();
-      this.rounds--;
-      this.displayChoices();
-      this.displayRounds();
-      this.getRoundWinner();
-    }
-    this.announceFinalWinner();
   }
 }
-
-let newGame = new RockPaperScissors();
-newGame.startGame();
