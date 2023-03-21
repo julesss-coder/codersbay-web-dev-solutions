@@ -42,6 +42,7 @@ If player clicks "make a move" button :
   Generate maths questions according to current level (see above):*
     Use random numbers
   Pose maths question to player:
+    Display solution input field
     Player enters his solution
     If player solution is correct:
       Player goes to next level:
@@ -49,6 +50,7 @@ If player clicks "make a move" button :
         Field of next level is colored
     Else:
       Level stays the same
+    Current calculation disappears
 
     If level === 9:
       Player wins (announce)
@@ -57,6 +59,7 @@ If player clicks "make a move" button :
   // decimal numbers: round to 3 decimal points (.toFixed(3))
   Level 1 - 4:
     generate random integers a and b
+      // Use numbers between 0 (inclusive) and 101 (exclusive)
     calculation = string `a` `calculation type` `b` 
     result = result of calculation
     check against user input
