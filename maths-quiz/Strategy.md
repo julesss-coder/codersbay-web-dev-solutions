@@ -12,7 +12,7 @@ Wenn Spieler Aufgabe richtig gelöst hat, rückt er ein Feld vor
 Wenn Ergebnis falsch ist, bleibt er auf der Position
 Zweiter Button für Spiel neu starten
 
-## Rewrite
+## 0.1. Rewrite
 
 ### Description of UI:
 board with fields, numbered from 1 to 9 (3 x 3):
@@ -51,7 +51,7 @@ If player clicks "make a move" button :
       Level stays the same
 
     If level === 9:
-      Player wins.
+      Player wins (announce)
 
 * Generate maths question:
   // decimal numbers: round to 3 decimal points (.toFixed(3))
