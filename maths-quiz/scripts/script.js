@@ -28,8 +28,7 @@ let newGameBtn = document.querySelector(".new-game-btn");
 class MathsQuiz {
 
   constructor() {
-    // Reset for each new question
-    this.level = 1;
+    this.level = 1; 
     this.a;
     this.b;
     this.result;
@@ -127,7 +126,7 @@ class MathsQuiz {
 
   getSquareRoot() {
     this.a = this.generateRandomInt();
-    this.calculationString = `\u221A${this.a}`; // Does this work?
+    this.calculationString = `\u221A${this.a}`;
     this.displayCalculation();
     this.result = +(Math.sqrt(this.a)).toFixed(3);
     this.checkLevel();
@@ -135,14 +134,14 @@ class MathsQuiz {
 
   getCubeRoot() {
     this.a = this.generateRandomInt();
-    this.calculationString = `\u221B${this.a}`; // Does this work?
+    this.calculationString = `\u221B${this.a}`; 
     this.displayCalculation();
     this.result = +(Math.cbrt(this.a)).toFixed(3);
     this.checkLevel();
   }
 
   generateRandomInt() {
-    return Math.round(Math.random() * 51);
+    return Math.ceil(Math.random() * 51);
   }
   
   displayCalculation() {
@@ -192,15 +191,16 @@ class MathsQuiz {
   markCurrentLevel() {
     // get the field in fields for the current level:
       // if level is 1, get field at index level - 1
-    
-    let currentField = fields[this.level - 1];
-    // FIXME
-    if (this.level > 1) {
-      let previousField = fields[this.level - 2];
-      previousField.classList.remove("current-level");
-    }
-    if (!currentField.classList.contains("current-field")) {
-      currentField.classList.add("current-level");
+    if (this.level < 10) {
+      let currentField = fields[this.level - 1];
+      // FIXME
+      if (this.level > 1) {
+        let previousField = fields[this.level - 2];
+        previousField.classList.remove("current-level");
+      }
+      if (!currentField.classList.contains("current-field")) {
+        currentField.classList.add("current-level");
+      }
     }
   }
 
@@ -218,37 +218,30 @@ makeMoveBtn.addEventListener("click", function() {
   announcement.textContent = "";
   mathsQuestion.textContent = "";
   newQuiz.askMathsQuestionForLevel();
-  playerInputField.classList.toggle("hide");
 });
 
 // Input field:
 submitBtn.addEventListener("click", function(event) {
-  newQuiz.evaluatePlayerInput();
-  newQuiz.checkLevel();
-  // if (!playerInputField.classList.contains("hide")) {
-  //   playerInputField.classList.add("hide");
-  // }; 
+  console.log(playerInput.textContent.trim());
+  if (playerInput.value.trim() !== "") {
+    newQuiz.evaluatePlayerInput();
+    newQuiz.checkLevel();
+  }
 });
 
+// add `hide` logic here too
 playerInput.addEventListener("keyup", function(event) {
-  if (event.key === "Enter") {
+  if (event.key === "Enter" && playerInput.value.trim() !== "") {
     console.log("event.target.value: ", event.target.value);
     newQuiz.evaluatePlayerInput();
     newQuiz.checkLevel();
-    
-    // if (!playerInputField.classList.contains("hide")) {
-    //   playerInputField.classList.add("hide");
-    // }
   }
 });
 
 newGameBtn.addEventListener("click", function() {
   mathsQuestion.textContent = "";
   announcement.textContent = "";
-
-  // if (!playerInputField.classList.contains("hide")) {
-  //   playerInputField.classList.add("hide");
-  // }
+  playerInputField.classList.add("hide");
 
   fields.forEach((field) => {
     field.classList.remove("current-level");
