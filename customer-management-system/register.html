@@ -13,18 +13,41 @@
     <h1>Please register:</h1>
     <div class="row">
       <div class="col">
-        <form>
+        <form
+          method="post"  
+          action="register.php"
+        >
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            <label 
+              for="email" 
+              class="form-label">Email address</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              name="email"
+              aria-describedby="emailHelp"
+              required
+            >
+            <span class="error">*</span>
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password">
+            <label 
+              for="password" 
+              class="form-label">Password</label>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="password"
+              name="password"
+              required
+            >
+            <span class="error">*</span>
           </div>
           <button 
             type="submit"
+            name="submit"
             class="register-btn btn btn-primary">Register</button>
         </form>
       </div>
