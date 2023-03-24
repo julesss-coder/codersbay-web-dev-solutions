@@ -9,21 +9,46 @@
   <title>Customer Management System - Login</title>
 </head>
 <body>
+  <!-- Wie schaffe ich es, die Werte inm Formular zu behalten? -->
+  <!-- Der Ansatz auf https://www.w3schools.com/php/php_form_complete.asp funktioniert nicht. -->
   <div class="container login-page">
     <h1>Please log in</h1>
     <div class="row">
       <div class="col">
-        <form>
+        <form 
+          method="post"
+          action="login.php"
+          >
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            <label 
+              for="email" 
+              class="form-label">Email address</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              name="email" 
+              aria-describedby="emailHelp" 
+              required
+            >
+            <span class="error">*</span>
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password">
+            <label 
+              for="password" 
+              class="form-label">Password</label>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="password" 
+              name="password" 
+              required
+            >
+            <span class="error">*</span>
           </div>
           <button 
             type="submit" 
+            name="submit"
             class="login-btn btn btn-primary">Login</button>
         </form>
       </div>
