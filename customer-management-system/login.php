@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
     session_start();
     // User gets session variable
     $_SESSION['user_id'] = $queryOutput[0]['user_id'];
-    // header('location:dashboard.html');
+    header('location:dashboard.html');
     echo "<table class='table'>";
     foreach ($queryOutput as $row) {
       echo "<tr>";
