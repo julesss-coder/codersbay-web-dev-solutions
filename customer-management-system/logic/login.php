@@ -12,12 +12,15 @@ Style php page with CSS / Bootstrap
 -->
 <?php
 // Connect to database `users` via PDO
-$server = "mysql:host=localhost;dbname=customer_management_system";
-$dbUsername = "root";
-$dbPassword = "";
+$host = "localhost";
+$database = "customer_management_system";
+$charset = "utf8mb4";
+$username = "root";
+$password = "";
+$server = "mysql:host=$host;dbname=$database;charset=$charset";
 
 try {
-  $connection = new PDO($server, $dbUsername, $dbPassword);
+  $connection = new PDO($server, $username, $password);
 }
 catch(PDOException $e) {
   echo $e->getMessage();
@@ -74,7 +77,7 @@ if (isset($_POST['submit'])) {
     session_start();
     // User gets session variable
     $_SESSION['user_id'] = $queryOutput[0]['user_id'];
-    header('location:dashboard.html');
+    header('location:../pages/dashboard-page.php');
     echo "<table class='table'>";
     foreach ($queryOutput as $row) {
       echo "<tr>";

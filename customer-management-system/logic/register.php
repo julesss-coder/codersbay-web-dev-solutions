@@ -40,16 +40,19 @@
     }
 
      // Connect to database `users` via PDO
-  $server = "mysql:host=localhost;dbname=customer_management_system";
-  $username = "root";
-  $password = "";
-  
-  try {
-    $connection = new PDO($server, $username, $password);
-  }
-  catch(PDOException $e) {
-    echo $e->getMessage();
-  }
+     $host = "localhost";
+     $database = "customer_management_system";
+     $charset = "utf8mb4";
+     $username = "root";
+     $password = "";
+     $server = "mysql:host=$host;dbname=$database;charset=$charset";
+     
+     try {
+       $connection = new PDO($server, $username, $password);
+     }
+     catch(PDOException $e) {
+       echo $e->getMessage();
+     }
 
   // SQL query to database
   // $sqlQuery = "select * from users";

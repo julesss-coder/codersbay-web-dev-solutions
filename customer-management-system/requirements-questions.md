@@ -17,3 +17,11 @@ Logged in users can only edit the entries that they created
 - How do I get the current date and time of the submit?
 - How do I send it to the database?
 - How do I make sure the data the user input stays in the form in case there is an error and he has to correct some data (so that he does not have to re-enter all data)?
+- What happens if I delete an entry with a unique ID? Do the IDs of the other entries have to be changed?
+  - If I add a new id, the number of entries is requested. The new ID is length + 1. If I have deleted entries from the table (except the last one), the last ID does not match `length`.
+  - Get last entry's ID and add 1?
+- Which function calls do I need to send a database query?
+  - $query = $connection->query($lengthQuery);
+  - $query->execute();
+  - $queryOutput = $query->fetchAll();
+- What's the difference between prepared statements and sending an SQL query with `exec()`?
