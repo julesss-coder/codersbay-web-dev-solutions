@@ -15,8 +15,19 @@
       <div class="col">
         <form
           method="post"  
-          action="register.php"
+          action="../logic/register.php"
         >
+        <div class="mb-3">
+            <label 
+              for="full-name" 
+              class="form-label">Full name</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="full-name" 
+              name="full-name"
+            >
+          </div>
           <div class="mb-3">
             <label 
               for="email" 
@@ -41,6 +52,19 @@
               class="form-control" 
               id="password"
               name="password"
+              required
+            >
+            <span class="error">*</span>
+          </div>
+          <div class="mb-3">
+            <label 
+              for="password-reentry" 
+              class="form-label">Reenter password</label>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="password-reentry"
+              name="password-reentry"
               required
             >
             <span class="error">*</span>
