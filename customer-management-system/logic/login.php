@@ -11,61 +11,64 @@ Style php page with CSS / Bootstrap
 
 -->
 <?php
+  include_once('./connect-to-db.php');
+  include_once('./validate-login-input.php');
+// include validateinfo
 // Connect to database `users` via PDO
-$host = "localhost";
-$database = "customer_management_system";
-$charset = "utf8mb4";
-$username = "root";
-$password = "";
-$server = "mysql:host=$host;dbname=$database;charset=$charset";
+// $host = "localhost";
+// $database = "customer_management_system";
+// $charset = "utf8mb4";
+// $username = "root";
+// $password = "";
+// $server = "mysql:host=$host;dbname=$database;charset=$charset";
 
-try {
-  $connection = new PDO($server, $username, $password);
-}
-catch(PDOException $e) {
-  echo $e->getMessage();
-}
+// try {
+//   $connection = new PDO($server, $username, $password);
+// }
+// catch(PDOException $e) {
+//   echo $e->getMessage();
+// }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+// function test_input($data) {
+//   $data = trim($data);
+//   $data = stripslashes($data);
+//   $data = htmlspecialchars($data);
+//   return $data;
+// }
 
-// If form was submitted:
-if (isset($_POST['submit'])) {
-  // Validate submitted data
-  $emailErr = "";
-  $passwordErr = "";
-  $email = "";
-  $password = "";
+// // If form was submitted:
+// if (isset($_POST['submit'])) {
+//   // Validate submitted data
+//   $emailErr = "";
+//   $passwordErr = "";
+//   $email = "";
+//   $password = "";
 
   
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["email"])) {
-      $emailErr = "Email is required";
-      echo $emailErr;
-    } else {
-      //  filter_var() returns true if the email is valid, false otherwise. 
-      // i.e. in this case the condition is fulfulled if email VALID
-      // => Then why do we assign a value to $emailErr?
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "Invalid email format";
-      }
-      $email = test_input($_POST["email"]);
-      // echo $email;
-    }
+//   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     if (empty($_POST["email"])) {
+//       $emailErr = "Email is required";
+//       echo $emailErr;
+//     } else {
+//       //  filter_var() returns true if the email is valid, false otherwise. 
+//       // i.e. in this case the condition is fulfulled if email VALID
+//       // => Then why do we assign a value to $emailErr?
+//       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//         $emailErr = "Invalid email format";
+//       }
+//       $email = test_input($_POST["email"]);
+//       // echo $email;
+//     }
     
-    if (empty($_POST["password"])) {
-      $passwordErr = "Password is required";
-      echo $passwordErr;
-    } else {
-      $password = test_input($_POST["password"]);
-      // echo $password;
-    }
-  }
-}
+//     if (empty($_POST["password"])) {
+//       $passwordErr = "Password is required";
+//       echo $passwordErr;
+//     } else {
+//       $password = test_input($_POST["password"]);
+//       // echo $password;
+//     }
+//   }
+// }
 
   // SQL query to database with prepared statement
   $password = md5($password);
@@ -98,22 +101,10 @@ if (isset($_POST['submit'])) {
 
   // Deal with incorrect user input
 
-
-
-  // Strategy for login
-
-  // Get user input
-  // If email and password exists in database:
-  //   Start session
-  //   Forward to page dashboard
-  // Else
-  //   Print "user does not exist. Please register" 
-  
-
-  function printr($s){
-    echo "<pre>";
-      print_r($s);
-    echo "</pre>";
-  }
+  // function printr($s){
+  //   echo "<pre>";
+  //     print_r($s);
+  //   echo "</pre>";
+  // }
 ?>
 
