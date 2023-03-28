@@ -1,7 +1,15 @@
+* {
+  background-color: pink;
+}
+
 .error {
   color: #FF0000;
 }
 
 .php-table {
+  border: 1px solid black;
+}
+
+.create-customer-section {
   border: 1px solid black;
 }
