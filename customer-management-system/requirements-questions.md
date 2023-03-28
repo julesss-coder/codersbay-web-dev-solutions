@@ -1,16 +1,31 @@
 # Requirements
 ## Home index.html
-- Login link
-- Registration link
+- [x] Login link
+- [x] Registration link
 
 ## Dashboard
-- Create new customer via contact form
-- Overview of all customers 
-  - For each entry: Edit
-  - For each entry: Delete
+- [x] Create new customer via contact form
+- [x] Overview of all customers 
+  - [x] For each entry: edit button
+    - [x] Make edit button functional
+  - [x] For each entry: Delete button
+    - [x] Make delete button functional
+  - [ ] Create session per user so that:
+      - [ ] Logged in users can see all customer entries
+      - [ ] Logged in users can only edit the entries that they created
+  - [ ] Style `All customers` table with bootstrap classes
+  - [ ] Center and set width on `create new customer` form
+  - [ ] Style whole page
+    - [ ] Make sure style.css is connected to dashboard-page.php
+  - [ ] dashboard.php: Implement the steps in strategy marked with *.
 
-Logged in users can see all customer entries
-Logged in users can only edit the entries that they created
+## Register page
+- [ ] Build field to let user reenter password
+- [ ] Deal with incorrect reentry of password
+- [ ] Make form functional
+- [ ] Redirect to login page after successful registering
+
+## Login page
 
 # Questions
 ## Dashboard - create new user
@@ -25,3 +40,8 @@ Logged in users can only edit the entries that they created
   - $query->execute();
   - $queryOutput = $query->fetchAll();
 - What's the difference between prepared statements and sending an SQL query with `exec()`?
+
+
+===
+
+Export databse to upload it to GitHub
