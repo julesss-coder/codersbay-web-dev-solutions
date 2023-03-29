@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['user_id'])) {
+    header('location:./login-page.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +25,7 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Edit entry</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body edit-entry-modal-body">
-          ...
-        </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
+        <div class="modal-body edit-entry-modal-body"></div>
       </div>
     </div>
   </div>
@@ -44,24 +44,53 @@
     </div>
   </div>
 
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand h1" href="#">Customer Management System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+            <form 
+                method="post"
+                action="../logic/logout.php">
+                  <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    name="submit">
+                    Sign out
+                  </button>
+                </form>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <!-- Dashboard Container -->
-  <div class="container dashboard-page">
+  <div class="container dashboard-page my-5">
     <h1>Dashboard</h1>
     <h2>Create new customer</h2>
-    <div class="row create-customer-section">
+    <div class="row create-customer-section mb-5">
       <div class="col create-customer">
+
         <!-- New customer form -->
         <form 
           method="post"
           action="../logic/dashboard.php"
           class="row g-3">
-          <div class="col-md-6">
+          <div class="col-12">
             <label for="company-name" class="form-label">Company name</label>
             <input 
               type="text" 
               class="form-control" 
               id="company-name" 
               name="company-name"
+              placeholder="Company name"
               required>
           </div>
           <div class="col-12">
@@ -85,13 +114,14 @@
               name="phone-number"
               required>
           </div>
-          <div class="col-md-6">
+          <div class="col-12">
             <label for="address" class="form-label">Address</label>
             <input 
               type="text" 
               class="form-control" 
               id="address" 
               name="address"
+              placeholder="Address"
               required>
           </div>
           <div class="col-12">
@@ -103,6 +133,8 @@
         </form>
       </div>
     </div>
+    
+    <!-- All customers list -->
     <h2>All customers</h2>
     <div class="row">
       <div id="customer-table" class="col customer-table">
@@ -125,7 +157,6 @@
           <?php
             $allEntriesQuery = "SELECT * FROM clients";
             $query = $connection->query($allEntriesQuery);
-            // global $companyId;
             foreach($query as $array) {  
               $companyId = $array['company_id'];
               echo "<tr>";
@@ -137,29 +168,23 @@
               echo "<td>" . $array['created_by'] . "</td>";
               echo "<td>" . $array['created_at'] . "</td>";
               echo "<td>" . $array['edited_at'] . "</td>";
-              echo "<td><button type='button' class='btn btn-primary edit-btn'  data-bs-toggle='modal' data-bs-target='#editEntryModal' data-id='$companyId'>Edit</button></td>";
-              echo "<td><button type='button' class='delete-btn btn btn-primary'  data-bs-toggle='modal' data-bs-target='#deleteEntryModal' data-id='$companyId'>Delete</button></td>";
+              if ($array['created_by'] == $_SESSION['user_id']) {
+                echo "<td><button type='button' class='btn btn-primary edit-btn'  data-bs-toggle='modal' data-bs-target='#editEntryModal' data-id='$companyId'>Edit</button></td>";
+                echo "<td><button type='button' class='delete-btn btn btn-primary'  data-bs-toggle='modal' data-bs-target='#deleteEntryModal' data-id='$companyId'>Delete</button></td>";
+              } else {
+                echo "<td></td>";
+                echo "<td></td>";
+              }
               echo "</tr>";
             } 
           ?>
           </tbody>
         </table>
-        <!-- Create table
-            Request all entries from data base
-            For each entry // close php tag
-            Add table entry
-            // open & close php tag: }
-            html for end of table
-      -->
       </div>
     </div>
   </div>
 
-  
-
-  <!-- Bootstrap js or custom js first? -->
   <script src="../assets/script.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
