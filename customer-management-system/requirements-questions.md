@@ -20,12 +20,16 @@
   - [ ] dashboard.php: Implement the steps in strategy marked with *.
 
 ## Register page
-- [ ] Build field to let user reenter password
+- [x] Build field to let user reenter password
 - [ ] Deal with incorrect reentry of password
-- [ ] Make form functional
-- [ ] Redirect to login page after successful registering
+- [ ] Deal with already existing email address
+- [x] Make form functional
+- [x] Redirect to login page after successful registration
 
 ## Login page
+
+## Logout button
+- [ ] Make Logout link into submit button inside form. Redirect
 
 # Questions
 ## Dashboard - create new user
