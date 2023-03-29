@@ -31,7 +31,6 @@
           $emailErr = "Invalid email format";
         }
         $email = test_input($_POST["email"]);
-        // echo $email;
       }
       
       if (empty($_POST["password"])) {

@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include_once('./connect-to-db.php');
 
   if (isset($_POST['submit'])) {
@@ -16,5 +17,6 @@
     }
   }
 
+  // Redirect, also in case this page is accessed by direct link: // Can a user who is not logged in change something about the database is the session variable is not checked here?
   header('location:../pages/dashboard-page.php');
 ?>

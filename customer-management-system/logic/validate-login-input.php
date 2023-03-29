@@ -13,7 +13,6 @@
     $email = "";
     $password = "";
   
-    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty($_POST["email"])) {
         $emailErr = "Email is required";
@@ -34,7 +33,6 @@
         echo $passwordErr;
       } else {
         $password = test_input($_POST["password"]);
-        // echo $password;
       }
     }
   }
