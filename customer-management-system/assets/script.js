@@ -1,3 +1,4 @@
+// === Dashboard page ===
 const editEntryModalBody = document.querySelector(".edit-entry-modal-body");
 const deleteEntryModalBody = document.querySelector(".delete-entry-modal-body");
 const customerTable = document.querySelector("#customer-table");
@@ -129,7 +130,7 @@ customerTable.addEventListener('click', function(event) {
 
     // Create form for deletiong the selected database entry
     let form = `
-    <p>Are you sure you want to delete this entry with id ${entryChildren[0]}</p>
+    <p>Are you sure you want to delete this entry with the id ${entryChildren[0]}?</p>
     <form
     method="post"
     action="../logic/delete-entry.php"
